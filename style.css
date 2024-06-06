@@ -6,7 +6,9 @@
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {}
 
 header {
@@ -16,8 +18,19 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 100px;
+    padding: 40px 100px;
     position: fixed;
+    transition: 0.4s;
+    z-index: 100000;
+
+}
+
+header.sticky {
+    /* padding: 5px 100px; */
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: inset rgba(180, 137, 137, 0.1) 0px -1px 0px 0px;
+    backdrop-filter: blur(9px);
+    transition: all 0.3s ease-out 0s;
 
 }
 
@@ -26,24 +39,48 @@ header {
     font-weight: bold;
     color: #fefefe;
     text-transform: uppercase;
+    position: relative;
+}
+
+header.sticky .logo {
+    color: #3056d3;
 }
 
 .hamburger {
     display: none;
+    position: relative;
+}
+
+header.sticky .nav-bar li a {
+    color: #3056d3;
+    border: 1px solid #3056d336;
 }
 
 .nav-bar ul {
     display: flex;
+    position: relative;
+    margin-right: 70px;
+
 }
 
 .nav-bar ul li a {
+    border: 1px solid #fefefe41;
     display: block;
     color: #fefefe;
-    font-size: 20px;
-    padding: 10px 25px;
+    font-size: 18px;
+    padding: 6px 18px;
     border-radius: 50px;
     transition: 0.2s;
     margin: 0 5px;
+    position: relative;
+transition: all 0.4s ease-out 0s;
+
+}
+
+
+header.sticky .nav-bar ul li a:hover {
+    color: #fefefe;
+    background: #3056d3;
 }
 
 .nav-bar ul li a:hover {
@@ -56,12 +93,18 @@ header {
     background: #fefefe;
 }
 
+header.sticky .nav-bar ul li a.active {
+    color: #fefefe;
+    background-color: #3056d3;
+}
+
 .home {
     height: 60vh;
     padding-top: 10%;
     text-align: center;
     color: white;
     background-color: #3056d3;
+    position: relative;
 }
 
 .home h1 {
@@ -77,6 +120,7 @@ header {
 .about {
     padding: 100px;
     background-color: #f3f4fe;
+
 }
 
 .about-collection {
@@ -98,7 +142,7 @@ header {
 }
 
 .about .about-2 {
-    padding: 70px;
+    padding: 50px;
     width: 100%;
 }
 
@@ -124,6 +168,10 @@ header {
 @media only screen and (max-width:1320px) {
     header {
         padding: 0 50px;
+    }
+
+    .about {
+        /* max-width: 1140px; */
     }
 }
 
@@ -155,10 +203,17 @@ header {
 }
 
 @media only screen and (max-width:900px) {
+    header.sticky .nav-bar {
+        background: rgba(255, 255, 255, 0.8);
+    }
 
     header {
         padding: 0 20px;
         /* Adjust padding for smaller screens */
+    }
+
+    header.sticky .hamburger .line {
+        background: #3056d3;
     }
 
     .hamburger {
@@ -184,6 +239,7 @@ header {
         transition: 0.5s;
         overflow: hidden;
     }
+
 
     .nav-bar.active {
         height: 450px;
@@ -224,9 +280,10 @@ header {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .about {
-        padding: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .intern-cards {
@@ -234,7 +291,7 @@ header {
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        padding: 30px;
+        padding: 0px 30px;
 
     }
 
@@ -329,8 +386,8 @@ header {
     padding: 45px 30px;
     margin-bottom: 40px;
     border-radius: 8px;
-    height: 450px;
-    width: 350px;
+    height: 470px;
+    width: 360px;
 }
 
 .Second-card {
@@ -338,12 +395,11 @@ header {
     border: 2px solid #d4deff;
     margin-bottom: 40px;
     border-radius: 8px;
-    height: 450px;
-    width: 350px;
+    height: 520px;
+    width: 370px;
     background: linear-gradient(180deg, #3056d3 0%, #179bee 100%);
     border: none;
     padding: 55px 30px;
-    height: 480px;
 }
 
 .col .internship-header h4 {
@@ -392,14 +448,14 @@ header {
     line-height: 1.2;
 }
 
-.col-two .internship-header-sec span{
+.col-two .internship-header-sec span {
     display: inline-block;
-        padding: 10px 25px;
-        background: #ffffff;
-        border-radius: 30px;
-        color:#3056d3;
-        margin-bottom: 20px;
-        font-weight: 600;
+    padding: 10px 25px;
+    background: #ffffff;
+    border-radius: 30px;
+    color: #3056d3;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .internship-body-sec ul {
@@ -429,6 +485,7 @@ header {
     background-color: #3056d3;
     color: #ffffff;
 }
+
 footer {
     padding: 50px 0;
     text-align: center;

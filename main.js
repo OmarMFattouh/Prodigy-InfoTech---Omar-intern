@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.addEventListener('click', function () {
         navBar.classList.toggle('active');
     });
-    // Close the navigation menu when a menu item is clicked (optional)
+
     const navLinks = document.querySelectorAll('.nav-bar ul li a');
     navLinks.forEach(function (link) {
         link.addEventListener('click', function () {
@@ -13,8 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
- function changeColor(){
-    var elmnt = document.lu;
-    elmnt.style.backgroundColor = "white";
-     elmnt.style.color = "blue";
- }
+//  function changeColor(){
+//     var elmnt = document.lu;
+//     elmnt.style.backgroundColor = "white";
+//      elmnt.style.color = "blue";
+//  }
+// function stickyColorChanges(sticky){
+//     var element = document.li;
+//     element.style.backgroundColor = "whitee";
+//     element.style.color = "blue"
+// }
+
+window.addEventListener("scroll", function(){
+    var header = document.querySelector("header");
+     header.classList.toggle("sticky", window.scrollY > 0);
+})
