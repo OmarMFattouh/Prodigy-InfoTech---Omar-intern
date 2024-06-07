@@ -6,9 +6,11 @@
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+
 body {}
 
 header {
@@ -73,7 +75,7 @@ header.sticky .nav-bar li a {
     transition: 0.2s;
     margin: 0 5px;
     position: relative;
-transition: all 0.4s ease-out 0s;
+    transition: all 0.4s ease-out 0s;
 
 }
 
@@ -83,7 +85,7 @@ header.sticky .nav-bar ul li a:hover {
     background: #3056d3;
 }
 
-.nav-bar ul li a:hover {
+.nav-bar ul li a:hover{
     color: #3056d3;
     background-color: #fefefe;
 }
@@ -105,6 +107,10 @@ header.sticky .nav-bar ul li a.active {
     color: white;
     background-color: #3056d3;
     position: relative;
+}
+
+.home1 {
+    padding: 0px 20px;
 }
 
 .home h1 {
@@ -286,13 +292,19 @@ header.sticky .nav-bar ul li a.active {
         padding-right: 20px;
     }
 
+    .home {
+        height: 40vh;
+    }
+.logo{
+    margin: 30px;
+
+}
     .intern-cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
         padding: 0px 30px;
-
     }
 
 }
